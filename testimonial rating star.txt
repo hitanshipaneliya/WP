@@ -1,0 +1,132 @@
+<?php
+add_shortcode("testimonial_show_home", "testimonial_show_home"); // [testimonial_show_home]
+function testimonial_show_home()
+{
+    $html = "";
+    $args = array(
+        'post_type' => 'testimonials_post',
+    );
+    $wp_query = new WP_Query($args);
+    $html .= '<div class="testimonial_outer_block">';
+    while ($wp_query->have_posts()) {
+        $wp_query->the_post();
+        global $post;
+        $id = $post->ID;
+        $url = wp_get_attachment_url(get_post_thumbnail_id($id), 'full');
+        $rating_stat_testi = get_post_meta($post->ID, 'rating_stat_testi', true);
+        // $coma = get_site_url() .'/wp-content/uploads/2023/09/qoute-icon.png';
+        $quote = get_site_url() . '/wp-content/uploads/2023/11/quote.png';
+        $ggl = get_site_url() . '/wp-content/uploads/2023/11/ggl.png';
+        $html .= '<div class="testimonial_block">';
+        $html .= '<div class="testimonial_block_inner">';
+        $html .= ' <div class="testimonial_upper">';
+        $html .= '<div class="testmonial_left">';
+        $html .= '<div class="quote_img_box">';
+        $html .= '<img src="' . $quote . '" alt="">';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '<div class="testimonial_right">';
+        $html .= '<div class="testimonial_title f_20 fw6 tcm">';
+        $html .= '<span>' . get_the_title() . '</span>';
+        $html .= '</div>';
+        $html .= '<div class="review_box">';
+        $html .= '<div class="review_box_inner ">';
+        for ($i = 1; $i <= 5; $i++) {
+            $active_class = "";
+            if ($rating_stat_testi >= $i) {
+                $active_class = "active_star";
+            } else {
+                $active_class = "";
+            }
+            $html .= '<i class="fa fa-star  ' . $active_class . '" aria-hidden="true"></i>';
+        }
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '<div class="testimonial_end">';
+        $html .= '<div class="google_img_box">';
+        $html .= '<img src="' . $ggl . '" alt="">';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '<div class="testimonial_inr">';
+        $html .= '<div class="testimonial_description site_des tc">';
+        $html .= '<span>' . get_the_content() . '</span>';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '</div>';
+    
+    }
+    wp_reset_query();
+    $html .= '</div>';
+    return $html;
+}
+
+
+
+
+
+add_shortcode("testimonial_page_show", "testimonial_page_show"); // [testimonial_page_show]
+function testimonial_page_show()
+{
+    $html = "";
+    $args = array(
+        'post_type' => 'testimonials_post',
+    );
+    $wp_query = new WP_Query($args);
+    $html .= '<div class="testimonial_outer_page_block">';
+    while ($wp_query->have_posts()) {
+        $wp_query->the_post();
+        global $post;
+        $id = $post->ID;
+        $url = wp_get_attachment_url(get_post_thumbnail_id($id), 'full');
+        $rating_stat_testi = get_post_meta($post->ID, 'rating_stat_testi', true);
+        // $coma = get_site_url() .'/wp-content/uploads/2023/09/qoute-icon.png';
+        $quote = get_site_url() . '/wp-content/uploads/2023/11/quote.png';
+        $ggl = get_site_url() . '/wp-content/uploads/2023/11/ggl.png';
+        $html .= '<div class="testimonial_block">';
+        $html .= '<div class="testimonial_block_inner">';
+        $html .= ' <div class="testimonial_upper">';
+        $html .= '<div class="testmonial_left">';
+        $html .= '<div class="quote_img_box">';
+        $html .= '<img src="' . $quote . '" alt="">';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '<div class="testimonial_right">';
+        $html .= '<div class="testimonial_title f_20 fw6 tcm">';
+        $html .= '<span>' . get_the_title() . '</span>';
+        $html .= '</div>';
+        $html .= '<div class="review_box">';
+        $html .= '<div class="review_box_inner ">';
+        for ($i = 1; $i <= 5; $i++) {
+            $active_class = "";
+            if ($rating_stat_testi >= $i) {
+                $active_class = "active_star";
+            } else {
+                $active_class = "";
+            }
+            $html .= '<i class="fa fa-star  ' . $active_class . '" aria-hidden="true"></i>';
+        }
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '<div class="testimonial_end">';
+        $html .= '<div class="google_img_box">';
+        $html .= '<img src="' . $ggl . '" alt="">';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '<div class="testimonial_inr">';
+        $html .= '<div class="testimonial_description site_des tc">';
+        $html .= '<span>' . get_the_content() . '</span>';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '</div>';
+    
+    }
+    wp_reset_query();
+    $html .= '</div>';
+    return $html;
+}

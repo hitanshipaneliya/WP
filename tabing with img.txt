@@ -1,0 +1,308 @@
+<div class="accordion full-screen background flawed-z-correct black" data-background="[website_url]/wp-content/uploads/2023/11/service-bg-1.jpg" style="background-image: url('[website_url]/wp-content/uploads/2023/11/service-bg-1.jpg');">
+   <!-- <div id="exit-accordion" class="absolute hidden hidden-xs"><i class="fa fa-times"></i></div>-->
+    <div class="accordion-item" data-background="[website_url]/wp-content/uploads/2023/11/ser1.jpg">
+        <div class="os_info_box">
+            <p class="os_title">CCTV</p> 
+            <div class="os_decs">
+                <div class="os_point">
+                    <ul>
+                        <li>residential alarm system</li>
+                        <li>alarm installation</li>
+                        <li>commercial alarm system</li>
+                    </ul>
+                </div>
+                <div class="os_btn btn2">
+                    [add_this_button title="know more" shortlink="shortLInk" custom_class=""]
+                    [add_this_button title="Get a Free Quote" shortlink="shortLInk" custom_class=""]
+                </div>
+            </div>
+            <div class="arrow_icon"><img src="[website_url]/wp-content/uploads/2023/11/arrow-icon.png"></div>
+        </div>
+    </div>
+    <div class="accordion-item" data-background="[website_url]/wp-content/uploads/2023/11/ser2.jpg">
+        <div class="os_info_box">
+            <p class="os_title">Alarm System</p> 
+            <div class="os_decs">
+            <div class="os_point">
+                    <ul>
+                        <li>residential alarm system</li>
+                        <li>alarm installation</li>
+                        <li>commercial alarm system</li>
+                    </ul>
+                </div>                
+                <div class="os_btn btn2">
+                    [add_this_button title="know more" shortlink="shortLInk" custom_class=""]
+                    [add_this_button title="Get a Free Quote" shortlink="shortLInk" custom_class=""]
+                </div>
+            </div>
+            <div class="arrow_icon"><img src="[website_url]/wp-content/uploads/2023/11/arrow-icon.png"></div>
+        </div>
+    </div>
+    <div class="accordion-item" data-background="[website_url]/wp-content/uploads/2023/11/ser3.jpg">
+        <div class="os_info_box">
+            <p class="os_title">Intercom System</p> 
+            <div class="os_decs">
+                <div class="os_point">
+                    <ul>
+                        <li>residential alarm system</li>
+                        <li>alarm installation</li>
+                        <li>alarm installation</li>
+                        <li>commercial alarm system</li>
+                    </ul>
+                </div>
+                <div class="os_btn btn2">
+                    [add_this_button title="know more" shortlink="shortLInk" custom_class=""]
+                    [add_this_button title="Get a Free Quote" shortlink="shortLInk" custom_class=""]
+                </div>
+            </div>
+            <div class="arrow_icon"><img src="[website_url]/wp-content/uploads/2023/11/arrow-icon.png"></div>
+        </div>
+    </div>
+    <div class="accordion-item" data-background="[website_url]/wp-content/uploads/2023/11/ser4.jpg">
+        <div class="os_info_box">
+            <p class="os_title">Access Control</p> 
+           
+            <div class="os_decs">
+                <div class="os_point">
+                    <ul>
+                        <li>residential alarm system</li>
+                        <li>alarm installation</li>
+                        <li>commercial alarm system</li>
+                    </ul>
+                </div>
+                <div class="os_btn btn2">
+                    [add_this_button title="know more" shortlink="shortLInk" custom_class=""]
+                    [add_this_button title="Get a Free Quote" shortlink="shortLInk" custom_class=""]
+                </div>
+            </div>
+          
+            <div class="arrow_icon"><img src="[website_url]/wp-content/uploads/2023/11/arrow-icon.png"></div>
+        </div>
+    </div>
+    <div class="accordion-item" data-background="[website_url]/wp-content/uploads/2023/11/ser5.jpg">
+        <div class="os_info_box">
+            <p class="os_title">Locksmith</p>             
+            <div class="os_decs">
+                <div class="os_point">
+                    <ul>
+                        <li>residential alarm system</li>
+                        <li>alarm installation</li>
+                        <li>commercial alarm system</li>
+                    </ul>
+                </div>
+                <div class="os_btn btn2">
+                    [add_this_button title="know more" shortlink="shortLInk" custom_class=""]
+                    [add_this_button title="Get a Free Quote" shortlink="shortLInk" custom_class=""]
+                </div>
+            </div>
+            <div class="arrow_icon"><img src="[website_url]/wp-content/uploads/2023/11/arrow-icon.png"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+/*--------------service-------------------*/
+.oseri_title {
+    padding: 25px 0 25px;
+}
+.os_col {
+    padding: 30px 0 0 0;
+}
+
+
+.accordion::before {
+    content: "";
+    position: absolute;
+    background: #ffffff63;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.accordion {
+    height: 700px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #462E8D;
+    transition: 1s;
+}
+.accordion-item {
+    /* width: 20%; */
+    flex: 1;
+    padding: 0 0 60px;
+    border-right: 1px solid #462E8D;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    transition: 1s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.accordion-item:last-child {
+    border: none;
+}
+.os_title {
+    font-size: 36px;
+    font-weight: 500;
+    color: #000;
+    text-transform: capitalize;
+    padding: 15px 0 5px 0 !important;
+    writing-mode: tb;
+    transform: rotateX(180deg) rotateY(180deg);
+    transition: 1s;
+}
+.os_decs ul {
+    padding: 0;
+    list-style: none;
+}
+.os_decs ul li {
+    text-transform: capitalize;
+    padding: 3px 0 3px 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.os_decs ul li::before {
+    content: "";
+    position: absolute;
+    background: #000;
+    width: 7px;
+    height: 7px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    transform: rotate(45deg);
+}
+.os_decs {
+    padding: 0 0 20px 0;
+    transform: translate(0px, 60%);
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    transition: 1s;
+}
+.arrow_icon {
+    width: 55px;
+    height: 55px;
+    border: 1px solid #442d89;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.arrow_icon img {
+    width: 100%;
+    height: 20px;
+    object-fit: contain;
+}
+.accordion-item.active {
+    /* width: 70% !important; */
+    flex: 50%;
+    justify-content: left;
+    padding: 0 0px 60px 30px;
+}
+/* .accordion.active .accordion-item {
+    width: 10%;
+} */
+.accordion-item.active .os_title {
+    transform: rotateX(359deg) rotateY(0deg);
+    writing-mode: inherit;
+}
+.accordion-item.active .os_decs {
+    transform: translate(0px, 0%);
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+}
+.accordion-item.active .arrow_icon {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+.os_section .st_title_row::before {
+    content: "";
+    position: absolute;
+    background: url(../../../wp-content/uploads/2023/11/cctv-img.png)no-repeat;
+    width: 100%;
+    height: 160px;
+    left: 0;
+    bottom: 0;
+    background-size: contain;
+    animation: camera2 3s linear infinite;
+}
+@keyframes camera2 {
+    0% {
+		transform: translate(0px, 10px);
+    }
+    50% {
+    	transform: translate(0px, 0px);
+    }
+    100% {
+    	transform: translate(0px, 10px);
+    }
+}
+/*--------------end service-------------------*/
+
+
+
+
+
+
+
+
+
+
+// our service 
+setTimeout(function(){
+    jQuery('.accordion .accordion-item:nth-child(3)').click();
+},100);
+var count = 0;
+var originalimage = "url(" + jQuery('.accordion').data('background') + ")";
+jQuery('.accordion').css('background-image', originalimage);
+jQuery('.accordion-item').each(function() {
+    jQuery('<img/>')[0].src = jQuery(this).data('background');
+})
+jQuery('.accordion .accordion-item').on('click', function() {
+    var clicked = jQuery(this);
+    count++;
+    var is_click = jQuery(this).data('isclick');
+    var is_click_pass = "";
+    // console.log("count",count);
+    var bg = "url(" + jQuery(this).data('background') + ")";
+    clicked.parent('.accordion').css('background-image', bg).find('.accordion-item').not(clicked).removeClass('active');
+    if (is_click == "1") {
+        jQuery(this).attr('data-isclick', '0');
+        jQuery('.accordion').css('background-image', originalimage);
+    } else {
+        jQuery(this).attr('data-isclick', '1');
+    }
+    clicked.addClass('active');
+    jQuery('.accordion').addClass('active');
+    var is_click = jQuery(this).data('isclick');
+    if (jQuery(this).hasClass("active")) {
+        if (is_click == "1") {
+            is_click_pass = "1";
+            // console.log("is actiev");
+            jQuery(this).attr('data-isclick', '1');
+            setTimeout(function() {
+                var data_CutImg = jQuery(".accordion .active").data('background');
+                // console.log("data_CutImg", data_CutImg);
+                jQuery('.accordion').css('background-image', 'url(' + data_CutImg + ')');
+            }, 100);
+        } else {
+            // console.log("is  not actiev");
+            jQuery(this).attr('data-isclick', '0');
+            // console.log("originalimage", originalimage);
+        }
+    }
+});

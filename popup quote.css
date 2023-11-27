@@ -1,0 +1,92 @@
+/* --------------popup quote---------------- */
+.quote_padding{
+    padding: 20px !important;
+}
+.sck_quote_popup_section{
+    position: fixed;
+    right:-100%;
+    border: 3px solid #fff;
+    width: 50%;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+	background: rgb(227 88 41 / 81%);
+    backdrop-filter: blur(15px);
+    top: 20%;
+    bottom: auto;
+    display: flex;
+    transition: 1s;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+}
+.add_quote_popup{
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+}
+.popup_close_icon {
+    position: absolute;
+	right: -20px;
+    top: -40px;
+    cursor: pointer;
+    background: #fff;
+    padding: 5px 10px;
+    border: 2px solid #fff;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	left: auto;
+}
+.popup_close_icon i {
+    display: flex;
+    color: #000;
+    font-size: 16px;
+}
+.blur_body{
+    -webkit-filter: blur(5px) !important;
+    filter: blur(5px) !important;
+}
+.sck_quote_title {
+	padding: 20px 0;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+}
+ 
+/* 
+// get a free guote popup  // product popup
+// form popup  */
+/* // jQuery(".sck_quote_popup_section").hide(); */
+
+
+/* 
+jQuery(".get_popup_click").on("click", function () {
+  jQuery(".sck_quote_popup_section").addClass("add_quote_popup");
+  jQuery("#main-content,.header_section ,.header_mob_section ,footer,.sfm-rollback").addClass("blur_body");
+});
+jQuery(".popup_close_icon").on("click", function () {
+  jQuery(".sck_quote_popup_section").removeClass("add_quote_popup");
+  jQuery("#main-content,.header_section ,.header_mob_section ,footer,.sfm-rollback").removeClass("blur_body");
+}); */
+
+
+
+/* wp admin side code ma aa code  */
+
+
+/* <div class="sck_quote_popup_col_box">
+	<div class="popup_close_icon">
+		<i class="fa fa-close" aria-hidden="true"></i>
+	</div>
+
+	<div class="sck_quote_form_col">
+		<div class="sck_quote_title site_title wt tc">
+			<span>Request A Call Back</span>
+		</div>
+		[contact-form-7 id="f7b6b7a" title="Request A Call Back"]
+	</div>
+</div> */

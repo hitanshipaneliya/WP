@@ -1,0 +1,43 @@
+<?php
+// Add a custom field to variation settings
+add_action('woocommerce_product_after_variable_attributes', 'variation_settings_fields', 10, 3);
+function variation_settings_fields($loop, $variation_data, $variation)
+{
+
+    woocommerce_wp_text_input(
+        array(
+            'id' => '_text_field[' . $loop . ']',
+            'label' => __('My Text Field', 'woocommerce'),
+            'placeholder' => 'http://',
+            'desc_tip' => 'true',
+            'description' => __('Enter the custom value here.', 'woocommerce'),
+            'value' => get_post_meta($variation->ID, '_text_field', true),
+        )
+    );
+}
+
+// Save custom field value from variation settings
+add_action('woocommerce_admin_process_variation_object', 'save_variation_settings_fields', 10, 2);
+function save_variation_settings_fields($variation, $loop)
+{
+    if (isset($_POST['_text_field'][$loop])) {
+        $variation->update_meta_data('_text_field', sanitize_text_field($_POST['_text_field'][$loop]));
+    }
+}
+
+// Add variation custom field to single variable product form
+add_filter('woocommerce_available_variation', 'add_variation_custom_field_to_variable_form', 10, 3);
+function add_variation_custom_field_to_variable_form($variation_data, $product, $variation)
+{
+
+
+    $variation_data['text_field'] = $variation->get_meta('_text_field');
+
+    return $variation_data;
+}
+
+add_action('woocommerce_product_additional_information', 'add_html_container_to_display_selected_variation_custom_field');
+function add_html_container_to_display_selected_variation_custom_field($product)
+{
+    echo '<div class="custom_variation-text-field"></div>';
+}
