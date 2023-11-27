@@ -1,0 +1,81 @@
+<!-- function file ma -->
+//  image alt tag on load 
+add_action( 'wp_head', 'image_alt_add');
+function image_alt_add(){  
+    return;
+}
+
+
+// ajax call
+add_action( 'wp_ajax_nopriv_image_src_data', 'image_src_data' );
+add_action( 'wp_ajax_image_src_data', 'image_src_data' );
+function image_src_data(){
+    $html = "";
+
+    $imgSrcs = $_POST['imgSrcs'];
+    $clasArray = $_POST['clasArray'];
+
+    // pre($imgSrcs);
+    // pre($clasArray);
+    $sendArrry = array();
+    foreach ($imgSrcs as $key => $value) {
+        
+        $url  = $value;
+        $id   = attachment_url_to_postid( $url );
+        $feat_image_alt = get_post_meta($id, '_wp_attachment_image_alt', true);
+
+        
+        $sendArrry['classList'][] = $clasArray[$key];
+        $sendArrry['attr'][] = $feat_image_alt;
+    }
+
+    echo json_encode($sendArrry);
+    wp_die();
+}
+
+
+
+
+<!--  js file ma -->
+
+
+// image alt tag on load js
+jQuery(document).ready(function(){
+    img_find();
+});
+
+
+function img_find() {
+    var imgs = document.getElementsByTagName("img");
+    var imgSrcs = [];
+    var clasArray = [];
+    for (var i = 0; i < imgs.length; i++) {
+        imgSrcs.push(imgs[i].src);
+        imgs[i].classList.add("my-class_"+i);
+        clasArray.push("my-class_"+i);
+
+    }
+
+    jQuery.ajax({
+        url: site_url+'/wp-admin/admin-ajax.php',
+        method: 'POST',
+        data:{
+            action: 'image_src_data',
+            imgSrcs: imgSrcs,
+            clasArray: clasArray,
+        },
+        success: function(response)
+        {
+            
+            var jsonData = JSON.parse(response);
+            console.log("response",response);
+
+            for (var i = 0; i < jsonData.classList.length; i++) {
+                jQuery("."+jsonData.classList[i]+"").attr("alt",jsonData.attr[i]);
+            }
+
+        }
+    });
+
+    return ;
+}

@@ -1,0 +1,40 @@
+<!-- // contact form 7 mail enquiery form -->
+
+<div class="enquiry_form_mail" style="width: 60%;margin: auto;">
+	<div class="" style='margin: 0 auto;margin-bottom:10px;'>
+	    <img src="logo addd" style="display: block;margin: 0 auto;height:70px;object-fit: contain;">
+	</div>
+	<div class="" style='margin: 0 auto;    box-shadow: -1px 7px 21px -6px black;padding: 0px;padding-top:0px;'>
+	    <div class="from_data_inner_title">
+	        <p><b style="display: block;background-color: #bcbcbc;color: #000 !important;padding: 10px;font-size: 20px;text-align: center;">Enquiry Details</b> </p>
+	    </div>
+	    <div class="from_data_inner" style="padding: 10px">
+	        <p style='border-bottom: 1px solid #ddd;padding-bottom: 5px;'><b>Name: </b>[yname]</p>
+	        <p style='border-bottom: 1px solid #ddd;padding-bottom: 5px;'><b>Email: </b>[email]</p>
+	        <p style='border-bottom: 1px solid #ddd;padding-bottom: 5px;'><b>Phone: </b> [phone]</p>
+	        <p style='border-bottom: 1px solid #ddd;padding-bottom: 5px;'><b>Postcode: </b>[postcode]</p>
+	        <p><b>message:</b>[message]</p>
+	    </div>
+	</div>
+</div>
+
+
+
+[checkbox* categoryserve  exclusive "Baby Diaper" "Adult Diaper"]
+
+exclusive   --- checkbox ma only one select
+
+
+
+
+// input check 
+jQuery('.wpcf7-list-item input').on("click", function(){
+  var value = jQuery(this).val();
+  var val = this.checked;
+  if(val == true){
+    jQuery(this).parent().addClass("input_check");
+  }
+  else{
+    jQuery(this).parent().removeClass("input_check");
+  }
+});

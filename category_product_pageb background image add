@@ -1,0 +1,41 @@
+<?php
+// category page background get 
+add_action('wp_footer', 'category_background_image_get'); 
+function category_background_image_get() { 
+    global $post;
+    $page_id = get_queried_object_id();    
+    $html ='';
+    $category_image_3 = get_term_meta($page_id, 'category_image_3', true);
+    $html .='<script type="text/javascript">';
+        $html .='jQuery(document).ready(function(){';
+            $html .='jQuery(".category_banner").css("background-image","url('.$category_image_3.')");';
+        $html .='});';
+    $html .='</script>';
+    echo $html;
+}
+
+
+// product page background get 
+add_action('wp_footer', 'product_background_image_get'); 
+function product_background_image_get() { 
+    $html ='';
+    global $post;
+    $page_object  = get_queried_object();     
+    $id = $post->ID;
+
+    $terms = get_the_terms ( $id, 'product_category' );
+    $catdArray = array();
+    if (!empty($terms)){
+        foreach($terms as $key => $value) {
+           $cat_Id =  $value->term_id;
+           $catdArray[] = $cat_Id;        
+        }
+        $category_image_3 = get_term_meta($catdArray[0], 'category_image_3', true);
+        $html .='<script type="text/javascript">';
+            $html .='jQuery(document).ready(function(){';
+                $html .='jQuery(".banner_section").css("background-image","url('.$category_image_3.')");';
+            $html .='});';
+        $html .='</script>';    
+    }   
+    echo $html;
+}

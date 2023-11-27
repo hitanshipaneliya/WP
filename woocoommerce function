@@ -1,0 +1,47 @@
+--------------------------------------
+//  invalid and dublicate sku error ave tyare 
+add_filter( 'wc_product_has_unique_sku', '__return_false' ); 
+
+--------------------------------
+
+
+function remove_core_updates(){
+
+    global $wp_version;
+    return(object) array('last_checked'=> time(),'version_checked'=> $wp_version,);
+
+  }
+  add_filter('pre_site_transient_update_core','remove_core_updates');
+  add_filter('pre_site_transient_update_plugins','remove_core_updates');
+  add_filter('pre_site_transient_update_themes','remove_core_updates');
+
+------------------------
+
+---------------------------
+login
+[xoo_el_action type="login" display="link" text="Login" change_to="myaccount"]
+
+------------------------------
+
+withoout price variation show
+add_filter('woocommerce_variation_is_visible', 'product_variation_always_shown', 10, 2);
+function product_variation_always_shown($is_visible, $id){
+    return true;
+}
+
+-----------------------
+
+
+// user check login or not
+function user_login_or_not() {
+    if (! is_user_logged_in() && (is_cart() || is_checkout()) ) {
+        // feel free to customize the following line to suit your needs
+        wp_redirect("".get_site_url()."/my-account");
+        exit;
+    }
+}
+add_action('template_redirect', 'user_login_or_not'); 
+
+
+-----------------------------
+

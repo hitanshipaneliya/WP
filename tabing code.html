@@ -1,0 +1,87 @@
+<!-- my account -->
+<div class="my_acc_section row_padding">
+    <div class="my_acc_row main_container">
+        <div class="my_acc_col">
+            <div class="my_acc_block">
+                <!-- left side -->
+                <div class="my_acc_left">
+                    <div class="my_acc_inr_lt">
+                        <ul class="my_acc_lt_ul">
+                            <!-- my booking -->
+                            <li class="my_acc_lt_li">
+                                <div class="my_acc_tab_name">
+                                    <span>My Bookings</span>
+                                </div>
+                            </li>
+                            <!-- update profile -->
+                            <li class="my_acc_lt_li">
+                                <div class="my_acc_tab_name">
+                                    <span>Update Profile</span>
+                                </div>
+                            </li>
+                            <!-- change password -->
+                            <li class="my_acc_lt_li">
+                                <div class="my_acc_tab_name">
+                                    <span>Change Password</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end left side -->
+                <!-- right side -->
+                <div class="my_acc_right">
+                    <div class="my_acc_inr_rt">
+                        <!-- my booking -->
+                        <div class="my_acc_rt_ul content_none">
+                            hello
+                        </div>
+                        <!-- update profile -->
+                        <div class="my_acc_rt_ul content_none">
+                            hiii
+                        </div>
+                        <!-- change password -->
+                        <div class="my_acc_rt_ul content_none">
+                            heyy
+                        </div>
+                    </div>
+                </div>
+                <!-- end right side -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end my account -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+
+    // main tabing left side 
+    (function($) {
+        jQuery('.my_acc_lt_ul').addClass('active').find('> li:eq(0)').addClass('current');
+
+        jQuery('.my_acc_lt_li').click(function(g) {
+            var tab = jQuery(this).closest('.my_acc_block'),
+                index = jQuery(this).closest('li').index();
+
+            tab.find('.my_acc_lt_ul > li').removeClass('current');
+            jQuery(this).closest('li').addClass('current');
+
+            tab.find('.my_acc_inr_rt').find('.my_acc_rt_ul.content_none').not('.my_acc_rt_ul.content_none:eq(' + index + ')').slideUp();
+            tab.find('.my_acc_inr_rt').find('.my_acc_rt_ul.content_none:eq(' + index + ')').slideDown();
+
+            g.preventDefault();
+        });
+    })(jQuery);
+});
+</script>
+
+
+<style type="text/css">
+    .content_none:first-child {
+        display: block;
+    }
+    .content_none {
+        display: none;
+    }
+</style>

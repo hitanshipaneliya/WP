@@ -1,0 +1,206 @@
+<script type="text/javascript">
+    // ====================
+// doctor detail page faqs detail
+jQuery(".faq_li:first-child .faq_box").addClass("faq_box_active");
+setTimeout(function(){
+  jQuery(".faq_box_active .faq_content").show();
+}, 100);
+jQuery(".faq_content").hide();
+jQuery(".faq_title").each(function(){
+  jQuery(this).unbind().click(function(){
+    jQuery(".faq_box").removeClass("faq_box_active");
+    jQuery(this).parent().addClass("faq_box_active");
+    jQuery(".faq_content").hide();
+    jQuery(".faq_box_active .faq_content").slideToggle("slow");
+  });
+});
+
+
+</script>
+
+
+<ul class="faq_ul">
+    <li class="faq_li">
+        <div class="faq_box">
+            <div class="faq_title site_inr_title">
+                <span>Where can I watch?</span>
+                <img src="assets/image/plus-icon.png">
+            </div>
+            <div class="faq_content site_text">
+                <span>Nibh quisque suscipit fermentum netus nulla cras porttitor euismod nulla. Orci, dictumstÂ necÂ aliquetÂ id ullamcorper venenatis. Fermentum sulla craspor ttitore  ismod nulla. ElitÂ adipiscingÂ proin quis est consectetur. Felis ultricies nisi, quis malesuada sem odio. PotentiÐ¼nibhÂ natoque amet amet, tincidunt ultricies et. Et nam rhoncus sit nullam diam tinciduntÂ condimentum nullam.</span>
+            </div>
+        </div>
+    </li>
+    <li class="faq_li">
+        <div class="faq_box">
+            <div class="faq_title site_inr_title">
+                <span>Tempus magna risus interdum ultricies sed urna?</span>
+                <img src="assets/image/plus-icon.png">
+            </div>
+            <div class="faq_content site_text">
+                <span>Nibh quisque suscipit fermentum netus nulla cras porttitor euismod nulla. Orci, dictumstÂ necÂ aliquetÂ id ullamcorper venenatis. Fermentum sulla craspor ttitore  ismod nulla. ElitÂ adipiscingÂ proin quis est consectetur. Felis ultricies nisi, quis malesuada sem odio. PotentiÐ¼nibhÂ natoque amet amet, tincidunt ultricies et. Et nam rhoncus sit nullam diam tinciduntÂ condimentum nullam.</span>
+            </div>
+        </div>
+    </li>
+</ul>
+
+
+
+<style type="text/css">
+.faq_ul {
+    padding: 0 !important;
+    list-style: none !important;
+}
+.faq_li {
+    padding: 15px 35px;
+}
+.faq_title {
+    display: flex;
+    color: #000;
+    padding-bottom: 0 !important;
+    font-weight: 600;
+    cursor: pointer;
+}
+.faq_content {
+    color: #515151 !important;
+    padding-top: 15px;
+}
+.faq_title img {
+    margin: 0 0 0 auto;
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    transition: 1s;
+}
+.faq_box {
+    border: 2px solid #00000052;
+    border-radius: 17px;
+    padding: 20px 20px;
+    background: #fff0;
+    transition: 1s;
+}
+.faq_title span {
+    padding-right: 30px;
+}
+.faq_box_active {
+    background: #fff;
+    border: 2px solid #fff;
+}
+.faq_box_active .faq_title img{
+    transform: rotate(45deg);
+}
+</style>
+
+
+
+
+
+
+<!--   -->
+
+<script type="text/javascript">
+    
+ jQuery(".g_serv_faq_content").hide();
+  jQuery(".g_serv_faq_title").each(function(){
+   
+    jQuery(this).unbind().click(function(){
+      if (jQuery(this).parent().hasClass("faq_box_active")) {
+        jQuery(".g_serv_faq_box").removeClass("faq_box_active");
+      }else{
+        jQuery(".g_serv_faq_box").removeClass("faq_box_active");
+        jQuery(this).parent().addClass("faq_box_active");
+      }
+      jQuery(".g_serv_faq_content").hide();
+      jQuery(".faq_box_active .g_serv_faq_content").slideToggle("slow");
+    });
+  });
+
+</script>
+
+<li class="g_serv_faq_li">
+    <div class="g_serv_faq_box faq_box_active">
+        <div class="gb_dm_serv_top_div g_serv_faq_title ">
+            <div class="gb_dm_cate_title"><span>Digital Marketing</span></div>
+            <div class="gb_plus_serv_icon"><span>+</span></div>
+        </div>
+        <div class="gb_dm_ser_mob_bottom g_serv_faq_content" style="">
+            <div class="gb_dm_serv_bottom_inr">
+                <ul class="gb_dm_serv_ul gb_dm_serv_ul_0 gb_dm_serv_ul_active" data-id="0">
+                    <li class="gb_dm_serv_li gb_dm_serv_li_259747" data-id="259747">
+                        <div class="gb_dm_serv_div">
+                            <div class="gb_dm_serv_img"><img decoding="async" src="https://gbim85.wpengine.com/wp-content/uploads/2023/03/Technical-SEO-.png" class="my-class_33" alt="Technical SEO"></div>
+                            <div class="gb_dm_desc">
+                                <div class="gb_dm_serv_title site_innr_title"><span>Technical SEO</span></div>
+                                <div class="gb_dm_serv_text site_text"><span>Get your technical SEO right for better crawlability, indexing, and user experience.</span></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</li>
+
+
+
+
+
+
+=====================================================================
+
+
+// faq accordion
+
+<div class="support_faq">
+    <ul class="support_inr_faq">                                                                                                
+        <div class="support_faq_title">
+            <span>Download the app</span>                                                       
+        </div>
+        <div class="support_faq_content">
+            <span>happn is an application that can be downloaded free-of-charge from the Apple App Store and the Google Play Store, on iPhones running version iOS 10 or higher and Android Smartphones running version 5 or higher.</span>
+        </div>
+        <div class="support_faq_title">
+            <span>Download the app</span>                                                       
+        </div>
+        <div class="support_faq_content">
+            <span>happn is an application that can be downloaded free-of-charge from the Apple App Store and the Google Play Store, on iPhones running version iOS 10 or higher and Android Smartphones running version 5 or higher.</span>
+        </div>
+    </ul>
+</div>
+
+//faq script
+jQuery(document).ready(function () {
+    jQuery(".support_inr_faq").on("click", ".support_faq_title", function () {
+        jQuery(this).toggleClass("active").next().slideToggle();
+        jQuery(".support_faq_content").not(jQuery(this).next()).slideUp(300);
+        jQuery(this).siblings().removeClass("active");
+
+    });
+});
+
+//css plus mius css
+.support_faq_title i {
+    margin: auto;
+    font-style: normal;
+    font-weight: 600;
+    margin-right: 0;
+    width: 15px;
+}
+.support_faq_title::before {
+    content: "+";
+    transform: rotate(0);
+    transition: all 0.5s;
+    right: 10px;
+    position: absolute;
+    font-size: 23px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.active.support_faq_title::before {
+    transform: rotate(-180deg);
+    content: "-";
+}

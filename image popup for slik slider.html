@@ -1,0 +1,75 @@
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-lightbox/0.2.12/slick-lightbox.css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-lightbox/0.2.12/slick-lightbox.min.js"></script>
+
+<!-- ==> [ js-gallery-popup ] <== add class -->
+<div class="certi_img js-gallery-popup">
+  <img src="https://primeroinfotech.com/projects/interface/wp-content/uploads/2023/04/PWD-Contractor-Registration-Certificate-Class-A.jpg">
+</div>
+<!-- end -->
+
+<script type="text/javascript">
+  jQuery(document).ready(function(){ 
+    jQuery('.certi_btm_ul').slickLightbox({
+      arrows: true,
+      
+      src: 'src',
+      itemSelector: '.js-gallery-popup img',
+      background: 'rgba(0, 0, 0, .7)'
+    });
+  });
+</script>
+
+
+
+
+.slick-lightbox-slick button.slick-prev.slick-arrow {
+    left: 0px !important;
+}
+.slick-lightbox-slick button.slick-next.slick-arrow {
+    right: 0px !important;
+}
+.slick-lightbox-slick .slick-arrow {
+    content: "";
+    position: absolute;
+    font-size: 27px;
+    color: #000;
+    background: #F5F5F5;
+    border: 1px solid #DDDDDD;
+    width: 30px;
+    height: 30px;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+    z-index: 99 !important;
+    font-size: 0;
+}
+.slick-lightbox-slick .slick-arrow:hover {
+    background: #E3000F;
+    color: #fff !important;
+}
+.slick-lightbox-slick .slick-prev:before,.slick-lightbox-slick .slick-next:before {
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: 1;
+}
+.slick-lightbox-slick .slick-prev:before {
+    content: '←';
+}
+.slick-lightbox-slick .slick-next:before {
+    content: '→';
+}
+.slick-lightbox-close:before {
+    font-size: 28px !important;
+    line-height: 1;
+    font-weight: 700;
+    color: #000 !important;
+    background: #fff;
+    padding: 0 7px;
+    opacity: 1;
+}
+.slick-lightbox-close {
+    right: 30px !important;
+}

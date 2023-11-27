@@ -1,0 +1,111 @@
+
+<link href="https://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<form action="https://www.sense22yoga.com/" method="POST">
+    <div class="header_search">
+        <input type="text" name="s" placeholder="Search" id="serach_id">
+        <label class="header_svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M23.6696 20.7495L18.9966 16.0766C18.7857 15.8656 18.4998 15.7485 18.1998 15.7485H17.4358C18.7294 14.0939 19.4981 12.0129 19.4981 9.74905C19.4981 4.36364 15.1345 0 9.74905 0C4.36364 0 0 4.36364 0 9.74905C0 15.1345 4.36364 19.4981 9.74905 19.4981C12.0129 19.4981 14.0939 18.7294 15.7485 17.4358V18.1998C15.7485 18.4998 15.8656 18.7857 16.0766 18.9966L20.7495 23.6696C21.1901 24.1101 21.9025 24.1101 22.3384 23.6696L23.6649 22.3431C24.1055 21.9026 24.1055 21.1901 23.6696 20.7495ZM9.74905 15.7485C6.43531 15.7485 3.74963 13.0675 3.74963 9.74905C3.74963 6.43531 6.43062 3.74963 9.74905 3.74963C13.0628 3.74963 15.7485 6.43062 15.7485 9.74905C15.7485 13.0628 13.0675 15.7485 9.74905 15.7485Z"></path>
+            </svg></label>
+    </div>
+    <div class="search_result_show">
+    </div>
+</form>
+
+
+<script type="text/javascript">
+// serach suggection
+jQuery(document).ready(function(){
+	jQuery("#serach_id").on('keyup',function(){
+		var serachval = jQuery(this).val();
+		console.log("serachval---->",serachval);
+		jQuery.ajax({
+			url: site_url, 
+            method: 'POST',
+            data: {
+                action: "serach_box_data",
+                searchvalue: serachval,
+            },
+			success: function(resp){
+
+				var dataDecode = JSON.parse(resp);
+				// console.log("dataDecode------------->", dataDecode);
+
+				var titleData = dataDecode.data;
+				// console.log("titleData---->", titleData);
+
+				if(dataDecode.err == "202")
+				{
+					// jQuery(".search_result_show").html(dataDecode.data);
+
+				    var availableTags = titleData;
+				    jQuery( "#serach_id" ).autocomplete({
+				      source: availableTags
+				    });
+			
+				}
+				else{
+					//jQuery(".search_result_show").html(dataDecode.msg);
+				}
+
+			}
+	
+		});
+	});
+});
+
+
+</script>
+
+
+// serach suggection
+add_action("wp_ajax_serach_box_data", "serach_box_data");
+add_action("wp_ajax_nopriv_serach_box_data", "serach_box_data");
+function serach_box_data()
+{
+    $html ='';
+    $sendArray = array();
+    $sendArray['post'] = $_POST;
+
+    $serachVal = $_POST['searchvalue'];
+    global $wpdb;
+    $prefix = $wpdb->prefix.'posts';
+
+    $titleArray = array();
+
+    if (@$serachVal) {
+       
+            $query = $wpdb->get_results("SELECT *  FROM `$prefix` WHERE `post_name` LIKE '%".$serachVal."%' AND `post_type` = 'product'");
+
+            foreach ($query as $key => $value) {
+               
+                $postTitle = $value->post_title;
+                 //pre($postTitle);
+
+                // $html .='<div class="serach_row">';
+                //     $html .='<div class="serach_col">';
+                //         $html .='<ul>';
+                //             $html .='<li><a href="'.get_permalink($post->ID).'">'.$postTitle.'</a></li>';
+                //         $html .='</ul>';
+                //     $html .='</div>';
+                // $html .='</div>';
+
+                $titleArray[] = $postTitle;
+    
+            }
+
+            // pre($titleArray);
+        $sendArray['err'] = "202";    
+        $sendArray['msg'] = "Result Found";    
+        $sendArray['data'] = $titleArray;    
+    }
+    else{
+        $sendArray['err'] = "402";    
+        $sendArray['msg'] = "Result Not Found";    
+        $sendArray['data'] = array();    
+    }
+    
+
+    echo json_encode($sendArray);
+    wp_die();
+}

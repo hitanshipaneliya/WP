@@ -1,0 +1,84 @@
+htaccess
+
+php_value upload_max_filesize 11111164M
+php_value post_max_size 11111164M
+php_value max_execution_time 111111111111300
+php_value max_input_time 111111111111300
+
+
+
+
+define('WP_MEMORY_LIMIT', '4096M');
+
+
+function pre($the_query = ""){
+    echo "<pre>";
+    print_r($the_query);
+    echo "</pre>";
+}
+
+$v = explode(",", $attr_pant);
+
+// / Disable new divi crazy crap code for CPT /
+function disable_cptdivi()
+{
+    remove_action( 'wp_enqueue_scripts', 'et_divi_replace_stylesheet', 99999998 );
+}
+add_action('init', 'disable_cptdivi');
+
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;
+}
+input[type="date"]::-webkit-inner-spin-button {
+    z-index: 1;
+}
+input[type="date"]::-webkit-clear-button {
+    z-index: 1;
+}
+
+
+// sticky css
+.woocommerce-page div#page-container {
+    overflow-y: unset !important;
+}
+.shop_col_one  
+{
+    position: sticky;
+    top: 120px;
+    height: min-content;
+    flex: 1;
+    border-radius: 5px;
+}
+
+
+
+
+
+function add_script_hk_product() {
+
+    $html ="";
+    $page_id = get_queried_object_id();
+    $script_content =  get_post_meta($page_id, 'script_content', true);
+    if(@$script_content){
+    
+        $html .= '<script type="application/ld+json">';
+        $html .= htmlspecialchars_decode($script_content); 
+        $html .= '</script>';    
+    }
+    echo $html;
+
+}
+add_action('wp_footer', 'add_script_hk_product');
+
+
+

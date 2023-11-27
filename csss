@@ -1,0 +1,107 @@
+----------- plus
+#sfm-sidebar .sfm-menu li a ins.sfm-sm-indicator {
+    width: 100% !important;
+    left: auto !important;
+    right: 0 !important;
+    z-index: 2 !important;
+}
+#sfm-sidebar .sfm-menu li a ins.sfm-sm-indicator i {
+    width: 100% !important;
+    height: 100% !important;
+    text-align: right !important;
+    left: auto !important;
+    right: 10px !important;
+}
+
+------------ arrow
+ins.sfm-sm-indicator {
+    width: 100% !important;
+    display: flex !important;
+}
+ins.sfm-sm-indicator i {
+    left: auto !important;
+    right: 10px !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    margin: auto 0 auto auto !important;
+}
+
+
+
+
+
+
+/*---------------scroll bar-----------------------*/
+::-webkit-scrollbar {
+    width: 2px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: #a41a1e;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #a41a1e;
+}
+::-webkit-scrollbar:horizontal{
+  	height: 2px;
+  	background-color: grey;
+}
+::-webkit-scrollbar-thumb:horizontal{
+    background: #a41a1e;
+    border-radius: 10px;     
+}
+/*---------------end scroll bar-----------------------*/
+
+
+
+
+@media all and (min-width: 320px) and (max-width: 767px){
+    
+}
+@media all and (min-width: 481px) and (max-width: 767px){
+    
+}
+@media all and (min-width: 768px) and (max-width: 980px){
+    
+}
+@media all and (min-width: 981px) and (max-width: 1024px){
+    
+}
+@media all and (min-width: 1025px) and (max-width: 1140px){
+    
+}
+@media all and (min-width: 1141px) and (max-width: 1280px){
+    
+}
+@media all and (min-width: 1281px) and (max-width: 1440px){
+    
+}
+@media all and (min-width: 1441px) and (max-width: 1680px){
+    
+}
+@media all and (min-width: 1681px) and (max-width: 1880px){
+    
+}
+
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+
+// background image with color
+background: linear-gradient(rgba(255, 255, 255, 0.92), rgb(250 230 226 / 78%)), url(../../../wp-content/uploads/2022/11/service-bg-background.jpg) no-repeat;
+
+
+// blur css
+backdrop-filter: blur(12px);
+background: rgba(255, 255, 255, 0.5) !important
